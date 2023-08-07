@@ -1,27 +1,165 @@
 JAVASCRIPT
 
-CALLS
+[____?????_____]
+[ CONSTRUCTOR  ]
+[ PROPERTIES   ]
+[ METHODS      ]
+[______________]
 
-HTTPS = REQUEST AND RESPONSE
-GENERALLY YOU CALL A FUNCTION  TO BE EXECUTED
+JavaScript is a multi-paradigm, dynamic language with TYPES and OPERATORS, standard built-in OBJECTS, and METHODS. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with OBJECT PROTOTYPES AND CLASSES. It also supports functional programming since FUNCTIONS are first-class that can be easily created via EXPRESSIONS and passed around like any other object.
 
+---------------------------------------------------------------------------------------------------------------------------
+DATA TYPES
 
+Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types:
 
-VARIABLE IS A REFERENCE TO A BUCKET -  - Variables are Containers for Storing Data
+ - Number: used for all number values (integer and floating point) except for very big integers.
+ - BigInt: used for arbitrarily large integers.
+ - String: used to store text.
+ - Boolean: true and false — usually used for conditional logic.
+ - Symbol: used for creating unique identifiers that won't collide.
+ - Undefined: indicating that a variable has not been assigned a value.
+ - Null: indicating a deliberate non-value.
 
-JavaScript Variables can be declared in 4 ways:
+Everything else is known as an OBJECT. Common object types include:
 
-Automatically
-Using var
-Using let
-Using const
+ - Function - The Function object provides methods for functions. In JavaScript, every function is actually a Function object.
+ - Array - The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, and has members for performing common array operations.
+ - Date - JavaScript Date objects represent a single moment in time in a platform-independent format. Date objects encapsulate an integral number that represents milliseconds since the midnight at the beginning of January 1, 1970, UTC (the epoch).
+ - RegExp - The RegExp object (regular expression is used for matching text with a pattern.
+ - Error - Error objects are thrown when runtime errors occur. The Error object can also be used as a base object for user-defined exceptions
 
-const = constant (reference to a value)  - does not change
-var = variable
-Let = xxx - cannot be redeclared
+FUNCTIONS aren't special data structures in JavaScript — they are just a special type of object that can be called.
+
+----------------------------------------------------------------------------------------------------------------
+VARIABLES
+Variables in JavaScript are declared using one of three keywords: let, const, or var.
+
+[let] allows you to declare block-level variables. The declared variable is available from the block it is enclosed in.
+[const] allows you to declare variables whose values are never intended to change. The variable is available from the block it is declared in. A variable declared with [const] cannot be reassigned. [const] declarations only prevent reassignments — they don't prevent mutations of the variable's value, if it's an object.
+[var] declarations can have surprising behaviors (for example, they are not block-scoped), and they are discouraged in modern JavaScript code.
+
+If you declare a variable without assigning any value to it, its value is undefined. You can't declare a [const] variable without an initializer, because you can't change it later anyway.
+
 
 Difference Between var, let and const
              Scope	    Redeclare	      Reassign	      Hoisted	     Binds this
 var	         No	        Yes	            Yes	            Yes	         Yes
 let	         Yes	      No	            Yes	            No	         No
 const	       Yes	      No	            No	            No	         No
+
+-------------------------------------------------------------------------------------------------------------------------------------
+OPERATORS
+JavaScript's numeric operators include +, -, *, /, % (remainder), and ** (exponentiation). Values are assigned using =. Each binary operator also has a compound assignment counterpart such as += and -=, which extend out to x = x operator y.
+
+Comparisons in JavaScript can be made using <, >, <= and >=, which work for both strings and numbers.
+
+---------------------------------------------------------------------------------------------------------
+GRAMMAR
+
+ - Identifiers can have Unicode characters, but they cannot be one of the reserved words - An identifier is used to link a value with a name. Identifiers can be used in various places:
+ - Comments are commonly // or /* */, while many other scripting languages like Perl, Python, and Bash use #.
+ - Semicolons are optional in JavaScript — the language automatically inserts them when needed. However, there are certain caveats to watch out, since unlike Python, semicolons are still part of the syntax.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CONTROL STRUCTURES
+JavaScript has a similar set of control structures to other languages in the C family. CONDITIONAL STATEMENTS are supported by [if] and [else]; you can chain them together. JavaScript doesn't have [elif], and [else if] is really just an else branch comprised of a single if statement.
+
+JavaScript has [while] LOOPS and [do...while] loops. The first is good for basic looping; the second is for loops where you wish to ensure that the body of the loop is executed at least once. JavaScript's [for] loop is the same as that in C and Java: it lets you provide the control information for your loop on a single line. JavaScript also contains two other prominent for loops: [for...of], which iterates over iterables, most notably arrays, and [for...in], which visits all enumerable properties of an object.
+
+The [switch] statement can be used for multiple branches based on equality checking.
+
+Unlike some languages like Rust, control-flow structures are statements in JavaScript, meaning you can't assign them to a variable, like const a = if (x) { 1 } else { 2 }.
+
+JavaScript ERRORS are handled using the [try...catch] statement. Errors can be thrown using the [throw] statement. Many built-in operations may throw as well.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+OBJECTS
+JavaScript objects can be thought of as collections of key-value pairs. As such, they are similar to:
+
+ - Dictionaries in Python.
+ - Hashes in Perl and Ruby.
+ - Hash tables in C and C++.
+ - HashMaps in Java.
+ - Associative arrays in PHP.
+
+JavaScript objects are hashes. Unlike objects in statically typed languages, objects in JavaScript do not have fixed shapes — properties can be added, deleted, re-ordered, mutated, or dynamically queried at any time. Object keys are always strings or symbols — even array indices, which are canonically integers, are actually strings under the hood.
+
+Object properties can be accessed using dot (.) or brackets ([]). When using the dot notation, the key must be a valid identifier. Brackets, on the other hand, allow indexing the object with a dynamic key value.
+
+Property access can be chained together:
+
+Objects are always references, so unless something is explicitly copying the object, mutations to an object would be visible to the outside.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ARRAYS
+Arrays in JavaScript are actually a special type of object. They work very much like regular objects (numerical properties can naturally be accessed only using [] syntax) but they have one magic property called length. This is always one more than the highest index in the array.
+
+JavaScript arrays are still objects — you can assign any properties to them, including arbitrary number indices. The only "magic" is that length will be automatically updated when you set a particular index.
+
+The array we got above is called a sparse array because there are uninhabited slots in the middle, and will cause the engine to deoptimize it from an array to a hash table. Make sure your array is densely populated!
+
+Out-of-bounds indexing doesn't throw. If you query a non-existent array index, you'll get a value of [undefined] in return:
+
+Arrays can have any elements and can grow or shrink arbitrarily.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+FUNCTIONS
+
+Along with objects, functions are the core component in understanding JavaScript.
+
+A JavaScript function can take 0 or more parameters. The function body can contain as many statements as you like and can declare its own variables which are local to that function. The return statement can be used to return a value at any time, terminating the function. If no return statement is used (or an empty return with no value), JavaScript returns undefined.
+
+Functions can be called with more or fewer parameters than it specifies. If you call a function without passing the parameters it expects, they will be set to undefined. If you pass more parameters than it expects, the function will ignore the extra parameters.
+
+anonymous_functions
+Recursive_functions
+
+JavaScript functions are first-class objects. This means that they can be assigned to variables, passed as arguments to other functions, and returned from other functions.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+CLASSES
+
+JavaScript classes are just functions that must be instantiated with the new operator. Every time a class is instantiated, it returns an object containing the methods and properties that the class specified. Classes don't enforce any code organization — for example, you can have functions returning classes, or you can have multiple classes per file.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ASYNCHRONOUS PROGRAMMING
+
+JavaScript is single-threaded by nature. There's no paralleling; only concurrency. Asynchronous programming is powered by an event loop, which allows a set of tasks to be queued and polled for completion.
+
+There are three idiomatic ways to write asynchronous code in JavaScript:
+
+ - Callback-based (such as setTimeout())
+ - Promise-based
+ - async/await, which is a syntactic sugar for Promises
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULES
+
+JavaScript also specifies a module system supported by most runtimes. A module is usually a file, identified by its file path or URL. You can use the import and export statements to exchange data between modules:
+
+Unlike Haskell, Python, Java, etc., JavaScript module resolution is entirely host-defined — it's usually based on URLs or file paths, so relative file paths "just work" and are relative to the current module's path instead of some project root path.
+
+However, the JavaScript language doesn't offer standard library modules — all core functionalities are powered by global variables like Math and Intl instead. This is due to the long history of JavaScript lacking a module system, and the fact that opting into the module system involves some changes to the runtime setup.
+
+Different runtimes may use different module systems. For example, Node.js uses the package manager npm and is mostly file-system based, while Deno and browsers are fully URL-based and modules can be resolved from HTTP URLs.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LANGUAGE AND RUNTIME
+
+Throughout this page, we've constantly mentioned that certain features are language-level while others are runtime-level.
+
+JavaScript is a general-purpose scripting language. The core language specification focuses on pure computational logic. It doesn't deal with any input/output — in fact, without extra runtime-level APIs (most notably console.log()), a JavaScript program's behavior is entirely unobservable.
+
+A runtime, or a host, is something that feeds data to the JavaScript engine (the interpreter), provides extra global properties, and provides hooks for the engine to interact with the outside world. Module resolution, reading data, printing messages, sending network requests, etc. are all runtime-level operations. Since its inception, JavaScript has been adopted in various environments, such as browsers (which provide APIs like DOM), Node.js (which provides APIs like file system access), etc. JavaScript has been successfully integrated in web (which was its primary purpose), mobile apps, desktop apps, server-side apps, serverless, embedded systems, and more. While you learn about JavaScript core features, it's also important to understand host-provided features in order to put the knowledge to use. For example, you can read about all web platform APIs, which are implemented by browsers, and sometimes non-browsers.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview#objects
+
+
+
+
+
+
