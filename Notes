@@ -1,0 +1,27 @@
+JAVASCRIPT
+
+CALLS
+
+HTTPS = REQUEST AND RESPONSE
+GENERALLY YOU CALL A FUNCTION  TO BE EXECUTED
+
+
+
+VARIABLE IS A REFERENCE TO A BUCKET -  - Variables are Containers for Storing Data
+
+JavaScript Variables can be declared in 4 ways:
+
+Automatically
+Using var
+Using let
+Using const
+
+const = constant (reference to a value)  - does not change
+var = variable
+Let = xxx - cannot be redeclared
+
+Difference Between var, let and const
+             Scope	    Redeclare	      Reassign	      Hoisted	     Binds this
+var	         No	        Yes	            Yes	            Yes	         Yes
+let	         Yes	      No	            Yes	            No	         No
+const	       Yes	      No	            No	            No	         No
