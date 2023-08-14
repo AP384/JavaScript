@@ -1,13 +1,11 @@
+
+JAVASCRIPT
+
 lightweight
 interpreted 
 single-threaded
 loosely typed or a dynamic language
 
-
-
-
-
-JavaScript
 JavaScript (or "JS") is primarily used in the browser, enabling developers to manipulate webpage content through the DOM, draw graphics with canvas, interact with the device running the browser through various APIs, and more.
 
 JavaScript is one of the world's most commonly-used languages.
@@ -24,15 +22,4 @@ Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use J
 
 Node.js is the most popular JavaScript runtime environment outside the browser.
 
-JavaScript basics
-Link to JS basic
-Link to MDN JavaScript Basic
-Link to MDN JavaScript — Dynamic client-side scripting
-JavaScript Intermediate & Advanced
-Link to JS intermediate
-Link to JS advanced
-Link to Vanilla JavaScript Projects
-References
-MDN JavaScript reference
-MDN JavaScript — Dynamic client-side scripting
-W3S - JavaScript Introduction
+
