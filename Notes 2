@@ -25,7 +25,6 @@ OPERATORS
 ---------
 
 In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
-alert(15%9);    - means remainder
 
 Arithmetic
 
@@ -33,9 +32,9 @@ Operator	Description
 +	        Addition
 -	        Subtraction
 *	        Multiplication
-**	      Exponentiation (ES2016)
+**	      Exponentiation - the operation of raising one quantity to the power of another. (ES2016)
 /	        Division
-%	        Modulus (Division Remainder)
+%	        Modulus (Division Remainder) - alert(15%9);    - means remainder (6)
 ++	      Increment
 --	      Decrement
 
