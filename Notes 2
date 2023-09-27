@@ -27,6 +27,8 @@ OPERATORS
 In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
 alert(15%9);    - means remainder
 
+Arithmetic
+
 Operator	Description
 +	        Addition
 -	        Subtraction
@@ -37,6 +39,8 @@ Operator	Description
 ++	      Increment
 --	      Decrement
 
+Assignment
+
 Operator	Example	   Same As
 =	        x = y      x = y
 +=	      x += y	   x = x + y
@@ -45,3 +49,43 @@ Operator	Example	   Same As
 /=	      x /= y	   x = x / y
 %=	      x %= y	   x = x % y
 **=	      x **= y	   x = x ** y
+
+Shift Assignment Operators
+
+Operator	Example	      Same As
+<<=	      x <<= y	      x = x << y
+>>=	      x >>= y	      x = x >> y
+>>>=	    x >>>= y	    x = x >>> y
+
+Bitwise Assignment Operators
+
+Operator	Example	      Same As
+&=	      x &= y	      x = x & y
+^=	      x ^= y	      x = x ^ y
+|=	      x |= y	      x = x | y
+
+Logical Assignment Operators
+
+Operator	Example	      Same As
+&&=     	x &&= y	      x = x && (x = y)
+||=	      x ||= y	      x = x || (x = y)
+??=	      x ??= y	      x = x ?? (x = y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
