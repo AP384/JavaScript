@@ -28,14 +28,14 @@ In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to"
 alert(15%9);    - means remainder
 
 Operator	Description
-+	Addition
--	Subtraction
-*	Multiplication
-**	Exponentiation (ES2016)
-/	Division
-%	Modulus (Division Remainder)
-++	Increment
---	Decrement
++	        Addition
+-	        Subtraction
+*	        Multiplication
+**	      Exponentiation (ES2016)
+/	        Division
+%	        Modulus (Division Remainder)
+++	      Increment
+--	      Decrement
 
 Operator	Example	   Same As
 =	        x = y      x = y
