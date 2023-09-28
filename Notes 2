@@ -349,3 +349,4 @@ for (x of fruits) {
   console.log(x);
 }
 Iterable (array) object
+
