@@ -329,14 +329,32 @@ Expression 1 sets a variable before the loop starts (let i = 0).
 Expression 2 defines the condition for the loop to run (i must be less than 5).
 Expression 3 increases a value (i++) each time the code block in the loop has been executed.        ++	      Increment
 
-for (let i = 0, len = cars.length, text = ""; i < len; i++) {
+You can initiate many values in expression 1 (separated by comma):
+
+<p id="demo></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let i, len, text;
+for (i = 0, len = cars.length, text = ""; i < len; i++) {
   text += cars[i] + "<br>";
 }
+document.getElementById("demo").innerHTML = text;
+</script>
 
-Expression 1 - (let i = 0)
-Expression 2 - evaluate the condition of the initial variable. - len = cars.length, text = ""; i < len; ????????
-Expression 3 - i++
+* <p id="demo></p>                 find the element called 'demo' within your HTML page and then the following bit of script will instruct the element
+* Const                            Variable initializated outside the loop 
+* Expression 1 - (let i = 0)       i equal 0
+* Expression 2 - 
+        len = cars.length          len equal the length of the array cars (in this context len = 4; its a static number in this example)
+        text = ""                  text equal empty string
+        i < len;                   if i is less then len (len in this context is static does not change) execute the logic on the body
+* Expression 3 - i++               Increment the value of i of 1 (same as i = i + 1)
+* Body -  += cars[i] + '<br>';     concatenate string at each iteration.
+* document                         webpage (document object)
+* getElementById("demo")           method that gets HTML element with ID 'demo'
+* innerHTML                        HTML element; The innerHTML property sets or returns the HTML content (inner HTML) of an element.
 
+Remember cars is an array and has got different method associated to it check reference and my personal note
 
 Create a loop that runs from 0 to 9.
 let i;
@@ -350,3 +368,42 @@ for (x of fruits) {
 }
 Iterable (array) object
 
+WHILE LOOP
+--------
+--------
+
+
+
+
+
+FUNCTIONS
+--------
+--------
+
+
+
+
+
+
+OBJECTS
+--------
+--------
+
+
+
+
+
+
+
+STRINGS
+--------
+--------
+
+
+
+
+
+
+ARRAYS
+--------
+--------
