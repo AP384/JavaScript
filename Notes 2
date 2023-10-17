@@ -371,27 +371,191 @@ Iterable (array) object
 WHILE LOOP
 --------
 --------
+The while loop loops through a block of code as long as a specified condition is true.
+The do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
 
+<body>
+<h2>JavaScript While Loop</h2>
+<p id="demo"></p>
 
+<script>
+let text = "";
+let i = 0;
+while (i < 10) {
+  text += "<br>The number is " + i;
+  i++;
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
 
+<body>
+<h2>JavaScript Do While Loop</h2>
+<p id="demo"></p>
+
+<script>
+let text = ""
+let i = 0;
+
+do {
+  text += "<br>The number is " + i;
+  i++;
+}
+while (i < 10);  
+
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+
+Increment by 2
+
+let i = 0;
+while (i < 10) {
+  console.log(i);
+i = i+2;
+}
 
 
 FUNCTIONS
 --------
 --------
 
+A JavaScript function is a block of code designed to perform a particular task.
+A JavaScript function is executed when "something" invokes it (calls it).
+
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+}
+
+Function parameters are listed inside the parentheses () in the function definition.
+Function arguments are the values received by the function when it is invoked.
+Inside the function, the arguments (the parameters) behave as local variables.
+
+The code inside the function will execute when "something" invokes (calls) the function:
+When an event occurs (when a user clicks a button)
+When it is invoked (called) from JavaScript code
+Automatically (self invoked)
+
+With functions you can reuse code
+You can write code that can be used many times.
+You can use the same code with different arguments, to produce different results.
 
 
+<h1>JavaScript Functions</h1>
+<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+<p id="demo"></p>
 
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+
+let value = toCelsius(77);
+document.getElementById("demo").innerHTML = value;
+</script>
+</body>
+
+<body>
+
+<h1>JavaScript Functions</h1>
+<p>Using a function as a variable:</p>
+<p id="demo"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+</body>
+
+Variables declared within a JavaScript function, become LOCAL to the function. Local variables can only be accessed from within the function.
 
 
 OBJECTS
 --------
 --------
 
+Properties
+	
+car.name = Fiat
 
+car.model = 500
 
+car.weight = 850kg
 
+car.color = white	
+
+Methods
+
+car.start()
+
+car.drive()
+
+car.brake()
+
+car.stop()
+
+All cars have the same properties, but the property values differ from car to car.
+All cars have the same methods, but the methods are performed at different times.
+
+Objects are variables too. But objects can contain many values.
+This code assigns many values (Fiat, 500, white) to a variable named car:
+const car = {type:"Fiat", model:"500", color:"white"};
+The values are written as name:value pairs (name and value separated by a colon).
+It is a common practice to declare objects with the const keyword.
+
+You can access object properties in two ways:
+person.lastName;
+person["lastName"];
+
+Objects can also have methods.
+Methods are actions that can be performed on objects.
+Methods are stored in properties as function definitions.
+
+Property	Property Value
+firstName	John
+lastName	Doe
+age       50
+eyeColor	blue
+fullName	function() {return this.firstName + " " + this.lastName;}
+
+A method is a function stored as a property.
+
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+In the example above, this refers to the person object.
+I.E. this.firstName means the firstName property of this.
+I.E. this.firstName means the firstName property of person.
+
+THIS
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+this is not a variable. It is a keyword. You cannot change the value of this.
+
+In a function definition, this refers to the "owner" of the function.
+In the example above, this is the person object that "owns" the fullName function.
+In other words, this.firstName means the firstName property of this object.
+
+Accessing Object Methods
+objectName.methodName()
+name = person.fullName();
+
+Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.
 
 
 
